@@ -4,12 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:jitsi_meet/jitsi_meet.dart';
 class VideoCallFlutter extends StatefulWidget {
-  final String image;
+  final String cover_image;
   final TextEditingController controller;
   final String Button1;
   final String Button2;
   final String Heading;
-  VideoCallFlutter({required this.image ,required this.controller, required this.Button1, required this.Button2, required this.Heading});
+  final String video_Subject;
+  final String User_name;
+  final String user_email;
+  final String User_image;
+  VideoCallFlutter({required this.cover_image ,required this.controller, required this.Button1, required this.Button2, required this.Heading,required this.user_email,required this.User_image,required this.User_name,required this.video_Subject});
 
   @override
   _VideoCallFlutterState createState() => _VideoCallFlutterState();
@@ -27,7 +31,7 @@ class _VideoCallFlutterState extends State<VideoCallFlutter> {
         child: Column(
           children: [
             SizedBox(height: 20,),
-            Image.asset(widget.image, width: 55, height: 50),
+            Image.asset(widget.cover_image, width: 55, height: 50),
             SizedBox(height: 20,),
             Text(widget.Heading),
             SizedBox(height: 20,),
@@ -71,10 +75,10 @@ class _VideoCallFlutterState extends State<VideoCallFlutter> {
       var options = JitsiMeetingOptions(room: widget.controller.text)
       // Required, spaces will be trimme
         ..serverURL = "https://meet.jit.si"
-        ..subject = "Meeting with Gunschu"
-        ..userDisplayName = "My Name"
-        ..userEmail = "myemail@email.com"
-        ..userAvatarURL = "https://someimageurl.com/image.jpg" // or .png
+        ..subject = widget.video_Subject
+        ..userDisplayName = widget.User_name
+        ..userEmail = widget.user_email
+        ..userAvatarURL = widget.User_image // or .png
         ..audioOnly = true
         ..audioMuted = true
         ..videoMuted = true;

@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
           decoration: BoxDecoration(
             color: Colors.black
           ),
-          child: Center(child: VideoCallFlutter(image: "assets/download.png",controller: controller,Heading: "Enter your code",Button1: "Join",Button2: "Share",)),
+          child: Center(child: VideoCallFlutter(cover_image: "assets/download.png",controller: controller,Heading: "Enter your code",Button1: "Join",Button2: "Share",user_email: "avinashjindal@gmail.com",video_Subject: "My video call",User_image: "assets/download.png",User_name: "Avinash",)),
         )
       )
     );
